@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') 
 
 module.exports = merge(base, {
+  stats: 'errors-warnings',
   mode: 'production', // 生产模式
   module: {
     rules: [
@@ -35,7 +36,8 @@ module.exports = merge(base, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[hash:8].css', // 将css单独提测出来放在assets/css 下
+      filename: '[name]/index.css',
+      chunkFilename: '[name].chunk.css',
     }),
   ],
 })
