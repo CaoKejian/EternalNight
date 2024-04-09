@@ -1,8 +1,7 @@
 import * as React from 'react'
-import './index.less'
-const NewDemo: React.FC = () => {
+import * as ReactDOM from 'react-dom/client'
 
-  return <div className='wrapper'>NewDemo</div>
-}
+import App from './App'
 
-export default NewDemo
+const root = ReactDOM.createRoot(document.getElementById('app')!)
+root.render(<App />)

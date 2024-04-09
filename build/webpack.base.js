@@ -1,8 +1,6 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ProgressPlugin = require('webpack').ProgressPlugin;
-const { webpackEntry } = require('./compile')
+const { webpackEntry, plugins } = require('./compile')
+
 module.exports = {
   entry: webpackEntry,
   output: {
@@ -47,19 +45,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
-          'less-loader',
+          'sass-loader',
         ],
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new ProgressPlugin(function(percentage, msg) {
-      console.log('🚀','\x1b[32mBuilding ' + msg + '... (' + Math.round(percentage * 100) + '%)\x1b[0m');
-    }),
-  ],
+  plugins,
 }

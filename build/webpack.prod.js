@@ -9,28 +9,20 @@ module.exports = merge(base, {
   module: {
     rules: [
       {
-        test: /\.(css|less)$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
+          // 'style-loader',
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [['postcss-preset-env', {}]],
-              },
-            },
-          },
-          'less-loader',
+          'sass-loader',
         ],
-        exclude: /node_modules/,
       },
     ],
   },
   optimization: {
     minimizer: [
       new CssMinimizerPlugin({
-        parallel: true  // 多进程并发执行，提升构建速度 。 运行时默认的并发数：os.cpus().length - 1
+        parallel: true 
       }),
     ],
   },
