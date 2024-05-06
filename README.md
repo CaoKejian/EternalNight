@@ -5,7 +5,7 @@
 ## 目录
 
 ```shell
-Nu Wa
+NuWa
 ├─ .gitignore
 ├─ .nvmrc
 ├─ README.md
