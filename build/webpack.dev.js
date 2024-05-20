@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path')
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base.js')
 
@@ -5,8 +7,12 @@ module.exports = merge(base, {
   stats: 'errors-warnings',
   mode: 'development',
   devServer: {
-	  open: true,
+    static: {
+      directory: path.join(__dirname, '../dist'),
+    },
+    open: true,
     port: 8080,
+    historyApiFallback: true,
   },
   module: {
     rules: [

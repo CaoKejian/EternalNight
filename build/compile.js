@@ -7,13 +7,13 @@ const componentEntries = fs.readdirSync(componentsDirectory)
   .map(component => ({
     name: component,
     entry: path.join(componentsDirectory, component, 'index.tsx')
-  }));
+  }))
 const webpackEntry = {}
-
 componentEntries.forEach(entry => {
   webpackEntry[entry.name] = entry.entry
 })
 
 module.exports = {
-  componentEntries
+  componentEntries,
+  webpackEntry
 }

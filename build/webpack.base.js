@@ -1,13 +1,33 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ProgressPlugin = require('webpack').ProgressPlugin;
-const { webpackEntry } = require('./compile')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ProgressPlugin = require('webpack')
+const { webpackEntry } = require('./compile.js')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const entryPoints = Object.keys(webpackEntry)
+
+const plugins = [
+  new CleanWebpackPlugin(),
+  ...entryPoints.map(entry => {
+    return new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, `../package/${entry}/index.html`),
+      filename: `${entry}/index.html`,
+      chunks: [entry],
+    })
+  }),
+  new MiniCssExtractPlugin({
+    filename: '[name]/styles.css',
+  }),
+]
+
 module.exports = {
   entry: webpackEntry,
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name]/index.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.mjs','.js', '.json', '.jsx', '.ts', '.tsx'],
@@ -15,7 +35,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(jsx?)|(tsx?)$/,
+        test: /\.(j|t)sx?$/, // 匹配 .js, .jsx, .ts 和 .tsx 文件
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -24,13 +44,13 @@ module.exports = {
               [
                 '@babel/preset-env',
                 {
-                  targets: 'iOS 9, Android 4.4, last 2 versions, > 0.2%, not dead', // 根据项目去配置
-                  useBuiltIns: 'usage', // 会根据配置的目标环境找出需要的polyfill进行部分引入
-                  corejs: 3, // 使用 core-js@3 版本
+                  targets: 'iOS 9, Android 4.4, last 2 versions, > 0.2%, not dead',
+                  useBuiltIns: 'usage',
+                  corejs: 3,
                 },
               ],
-              ['@babel/preset-typescript'],
-              ['@babel/preset-react'],
+              '@babel/preset-typescript', // 不需要数组形式的配置
+              '@babel/preset-react'
             ],
           },
         },
@@ -46,20 +66,12 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'less-loader',
-        ],
-      },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new ProgressPlugin(function(percentage, msg) {
-      console.log('🚀','\x1b[32mBuilding ' + msg + '... (' + Math.round(percentage * 100) + '%)\x1b[0m');
-    }),
+    ...plugins,
+    // new ProgressPlugin(function(percentage, msg) {
+    //   console.log('🚀','\x1b[32mBuilding ' + msg + '... (' + Math.round(percentage * 100) + '%)\x1b[0m');
+    // }),
   ],
 }
