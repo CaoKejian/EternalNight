@@ -30,3 +30,12 @@ NuWa
 └─ tsconfig.json
 
 ```
+
+## 更新组件和打包组件
+
+> 更新（上传组件信息，不包含依赖）
+```bash
+pnpm up:dev // 本地
+pnpm up:prod // 生产
+```
+> 打包（打包组件）

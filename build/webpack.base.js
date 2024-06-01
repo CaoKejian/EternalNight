@@ -11,6 +11,10 @@ module.exports = {
     filename: '[name]/index.js',
     publicPath: '/',
   },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
   resolve: {
     extensions: ['.mjs','.js', '.json', '.jsx', '.ts', '.tsx'],
   },
