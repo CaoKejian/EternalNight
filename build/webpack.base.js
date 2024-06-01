@@ -31,7 +31,7 @@ module.exports = {
                   corejs: 3,
                 },
               ],
-              '@babel/preset-typescript', // 不需要数组形式的配置
+              '@babel/preset-typescript',
               '@babel/preset-react'
             ],
           },

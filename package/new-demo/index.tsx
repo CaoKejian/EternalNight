@@ -1,8 +1,9 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
-import './index.less'
+import Upload from './component/upload'
+
 const NewDemo: React.FC = () => {
-  return <div className="wrapper">new-demo</div>
+  return <Upload />
 }
 
 const root = ReactDOM.createRoot(document.getElementById('app')!)

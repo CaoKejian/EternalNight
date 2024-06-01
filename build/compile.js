@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs')
 const path = require('path')
 
@@ -10,6 +11,7 @@ const componentEntries = fs.readdirSync(componentsDirectory)
   }))
 const webpackEntry = {}
 componentEntries.forEach(entry => {
+  if(entry.name === 'utils') return
   webpackEntry[entry.name] = entry.entry
 })
 
