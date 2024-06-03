@@ -3,18 +3,10 @@ import '../index.less'
 import { xxx } from '../../utils'
 
 const Upload: React.FC = () => {
-  const uploadComponent = async () => {
+  const uploadComponent = () => {
     xxx()
-    // const res = await http.post('http://localhost:3000/v1/upload', {
-    //   component: '组件信息',
-    //   img: '1',
-    //   desc: 'hahaha test',
-    //   uploadTime: '2024/6/1',
-    //   uploader: 'colin',
-    // })
-    // console.log(res)
   }
-  return <div className="wrapper" onClick={uploadComponent}>Hello</div>
+  return <div className="wrapper" onClick={uploadComponent}>按钮</div>
 }
 
 export default Upload
