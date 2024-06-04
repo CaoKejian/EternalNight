@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
