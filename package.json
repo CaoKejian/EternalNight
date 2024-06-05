@@ -1,7 +1,7 @@
 {
-  "name": "nuwa",
+  "name": "nuwa-components",
   "version": "1.0.0",
-  "description": "",
+  "description": "女娲组件库",
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -12,8 +12,13 @@
     "up:dev": "cross-env NODE_ENV=development node build/upload.js",
     "up:prod": "cross-env NODE_ENV=production node build/upload.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["React", "ui组件", "typescript", "webpack"],
+  "homepage": "https://github.com/CaoKejian/NuWa",
+  "author": {
+    "name" : "CaoKejian",
+    "email" : "CaoKejian@foxmail.com",
+    "url" : "https://github.com/CaoKejian"
+  },
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.2",
@@ -25,7 +30,7 @@
     "react-dom": "^18.2.0"
   },
   "engines": {
-    "node": "18.18.0"
+    "node": ">=18.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
