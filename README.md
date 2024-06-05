@@ -39,3 +39,20 @@ pnpm up:dev // 本地
 pnpm up:prod // 生产
 ```
 > 打包（打包组件）
+
+## npm 私服 verdaccio 使用指南
+- 1. 安装环境
+```bash
+npm i -g verdaccio (node-v16)
+
+```
+- 2. 启动 verdaccio
+```bash
+第一种方式：verdaccio
+第二种方式：pm2 start verdaccio
+```
+- 3. 使用
+  - 必要：添加用户 `npm adduser --registry http://localhost:4873/`
+  - 发包 `npm publish --registry http://localhost:4873/`
+
+  - 或者可以直接设置源 `npm set registry http://localhost:4873/`, 然后就可以直接不带参数使用。
