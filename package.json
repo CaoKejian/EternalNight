@@ -8,9 +8,12 @@
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*.+(js|ts|jsx|tsx)\"",
     "dev": "cross-env NODE_ENV=development webpack serve -c build/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack -c build/webpack.prod.js",
     "up:dev": "cross-env NODE_ENV=development node build/upload.js",
-    "up:prod": "cross-env NODE_ENV=production node build/upload.js"
+    "up:prod": "cross-env NODE_ENV=production node build/upload.js",
+    "build:dev": "cross-env NODE_ENV=production webpack -c build/webpack.prod.js",
+    "build:prod": "cross-env NODE_ENV=production webpack -c build/webpack.prod.js",
+    "publish:dev": "",
+    "publish:prod": ""
   },
   "keywords": ["React", "ui组件", "typescript", "webpack"],
   "homepage": "https://github.com/CaoKejian/NuWa",

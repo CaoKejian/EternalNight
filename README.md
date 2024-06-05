@@ -31,14 +31,23 @@ NuWa
 
 ```
 
-## 更新组件和打包组件
+## 更新组件、打包组件、发包
 
 > 更新（上传组件信息，不包含依赖）
 ```bash
-pnpm up:dev // 本地
-pnpm up:prod // 生产
+pnpm up:dev
+pnpm up:prod
 ```
 > 打包（打包组件）
+```bash
+pnpm build:dev
+pnpm build:prod
+```
+> 发包
+```bash
+pnpm publish:dev
+pnpm publish:prod
+```
 
 ## npm 私服 verdaccio 使用指南
 - 1. 安装环境
