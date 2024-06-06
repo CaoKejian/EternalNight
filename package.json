@@ -33,8 +33,9 @@
     "react-dom": "^18.2.0"
   },
   "engines": {
-    "node": ">=18.18.0"
+    "pnpm": ">=7.0.0"
   },
+  "engine-strict": true,
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
