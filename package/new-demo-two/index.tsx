@@ -6,7 +6,6 @@ const NewDemoTwo: React.FC = () => {
   return <div className="wrapper">NewDemoTwo</div>
 }
 
-const root = createRoot(document.getElementById('app')!)
-root.render(<NewDemoTwo />)
+createRoot(document.getElementById('app')!).render(<NewDemoTwo />)
 
 export { NewDemoTwo }

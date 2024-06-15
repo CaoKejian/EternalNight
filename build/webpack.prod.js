@@ -1,13 +1,9 @@
 const { merge } = require('webpack-merge')
-const path = require('path')
 const base = require('./webpack.base.js')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') 
-const { webpackEntry } = require('./compile.js')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const entryPoints = Object.keys(webpackEntry)
 module.exports = merge(base, {
   // stats: 'errors-warnings',
   mode: 'production', // 生产模式
@@ -58,13 +54,6 @@ module.exports = merge(base, {
     new MiniCssExtractPlugin({
       filename: '[name]/index.css',
       chunkFilename: '[name].chunk.css',
-    }),
-    ...entryPoints.map(entry => {
-      return new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, `../package/${entry}/index.html`),
-        filename: `${entry}/index.html`,
-        chunks: [entry],
-      })
     }),
   ],
 })

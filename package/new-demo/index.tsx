@@ -7,7 +7,7 @@ const NewDemo: React.FC = () => {
   return <Upload />
 }
 
-const root = createRoot(document.getElementById('app')!)
-root.render(<NewDemo />)
+createRoot(document.getElementById('app')!).render(<NewDemo />)
+
 
 export { NewDemo }
