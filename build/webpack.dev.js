@@ -2,12 +2,10 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base.js')
 const { webpackEntry } = require('./compile.js')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entryPoints = Object.keys(webpackEntry)
 const plugins = [
-  new CleanWebpackPlugin(),
   ...entryPoints.map(entry => {
     return new HtmlWebpackPlugin({
       template: path.resolve(__dirname, `../package/${entry}/index.html`),

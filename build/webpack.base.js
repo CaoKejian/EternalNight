@@ -1,5 +1,4 @@
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const ProgressPlugin = require('webpack')
 const { webpackEntry } = require('./compile.js')
 
@@ -12,6 +11,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.mjs','.js', '.json', '.jsx', '.ts', '.tsx'],
+    alias: {
+      'react': path.resolve(__dirname, '../node_modules/react'),
+      'react-dom': path.resolve(__dirname, '../node_modules/react-dom'),
+    },
   },
   module: {
     rules: [
@@ -50,7 +53,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     // new ProgressPlugin(function(percentage, msg) {
     //   console.log('🚀','\x1b[32mBuilding ' + msg + '... (' + Math.round(percentage * 100) + '%)\x1b[0m');
     // }),

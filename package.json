@@ -1,6 +1,6 @@
 {
   "name": "nuwa-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "女娲组件库",
   "main": "index.js",
   "scripts": {
@@ -15,12 +15,17 @@
     "publish:dev": "npm publish --registry http://localhost:4873/",
     "publish:prod": "npm publish --registry http://localhost:4873/"
   },
-  "keywords": ["React", "ui组件", "typescript", "webpack"],
+  "keywords": [
+    "React",
+    "ui组件",
+    "typescript",
+    "webpack"
+  ],
   "homepage": "https://github.com/CaoKejian/NuWa",
   "author": {
-    "name" : "CaoKejian",
-    "email" : "CaoKejian@foxmail.com",
-    "url" : "https://github.com/CaoKejian"
+    "name": "CaoKejian",
+    "email": "CaoKejian@foxmail.com",
+    "url": "https://github.com/CaoKejian"
   },
   "license": "ISC",
   "dependencies": {
@@ -35,8 +40,6 @@
   },
   "engine-strict": true,
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
@@ -62,6 +65,8 @@
     "postcss-preset-env": "^9.5.4",
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1",
     "style-loader": "^4.0.0",
     "typescript": "^5.4.4",
     "typescript-eslint": "^7.8.0",
