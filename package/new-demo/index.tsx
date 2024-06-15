@@ -8,3 +8,5 @@ const NewDemo: React.FC = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('app')!)
 root.render(<NewDemo />)
+
+export { NewDemo }
