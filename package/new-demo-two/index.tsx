@@ -5,7 +5,7 @@ import './index.less'
 const NewDemoTwo: React.FC = () => {
   return <div className="wrapper">NewDemoTwo</div>
 }
-
-createRoot(document.getElementById('app')!).render(<NewDemoTwo />)
-
+if (process.env.APP_NAME !== 'XLP') {
+  createRoot(document.getElementById('app')!).render(<NewDemoTwo />)
+}
 export { NewDemoTwo }

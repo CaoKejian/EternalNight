@@ -1,8 +1,11 @@
 {
   "name": "nuwa-components",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "女娲组件库",
   "main": "index.js",
+  "files": [
+    "**/*"
+  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\"",
@@ -32,6 +35,7 @@
     "axios": "^1.7.2",
     "core-js": "^3.37.1",
     "create-nuwa-template": "^1.0.0",
+    "dotenv-webpack": "^8.1.0",
     "less": "^4.2.0",
     "less-loader": "^12.2.0"
   },
@@ -46,6 +50,7 @@
     "@babel/preset-typescript": "^7.24.1",
     "@eslint/js": "^9.2.0",
     "@storybook/react": "^8.1.1",
+    "@types/node": "^20.14.2",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "babel-loader": "^9.1.3",

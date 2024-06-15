@@ -6,8 +6,8 @@ import Upload from './component/upload'
 const NewDemo: React.FC = () => {
   return <Upload />
 }
-
-createRoot(document.getElementById('app')!).render(<NewDemo />)
-
+if(process.env.APP_NAME !== 'XLP') {
+  createRoot(document.getElementById('app')!).render(<NewDemo />)
+}
 
 export { NewDemo }

@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge')
 const base = require('./webpack.base.js')
 const { webpackEntry } = require('./compile.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DotenvWebpackPlugin = require('dotenv-webpack');
 
 const entryPoints = Object.keys(webpackEntry)
 const plugins = [
@@ -13,6 +14,7 @@ const plugins = [
       chunks: [entry],
     })
   }),
+  new DotenvWebpackPlugin(),
 ]
 
 module.exports = merge(base, {

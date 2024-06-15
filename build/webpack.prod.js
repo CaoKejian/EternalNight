@@ -5,8 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') 
 
 module.exports = merge(base, {
-  // stats: 'errors-warnings',
+  stats: 'errors-warnings',
   mode: 'production', // 生产模式
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
   // externals: {
   //   react: {
   //     root: 'React',
