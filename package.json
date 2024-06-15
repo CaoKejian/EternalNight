@@ -1,6 +1,6 @@
 {
   "name": "nuwa-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "女娲组件库",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "up:prod": "cross-env NODE_ENV=production node build/upload.js",
     "build:dev": "cross-env NODE_ENV=production webpack -c build/webpack.prod.js",
     "build:prod": "cross-env NODE_ENV=production webpack -c build/webpack.prod.js",
-    "publish:dev": "",
-    "publish:prod": ""
+    "publish:dev": "npm publish --registry http://localhost:4873/",
+    "publish:prod": "npm publish --registry http://localhost:4873/"
   },
   "keywords": ["React", "ui组件", "typescript", "webpack"],
   "homepage": "https://github.com/CaoKejian/NuWa",
@@ -28,15 +28,15 @@
     "core-js": "^3.37.1",
     "create-nuwa-template": "^1.0.0",
     "less": "^4.2.0",
-    "less-loader": "^12.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "less-loader": "^12.2.0"
   },
   "engines": {
     "pnpm": ">=7.0.0"
   },
   "engine-strict": true,
   "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
