@@ -31,7 +31,15 @@ module.exports = merge(base, {
         test: /\.(css|less)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[hash:base64:5]',
+              },
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {

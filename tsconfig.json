@@ -6,9 +6,11 @@
     "target": "es2016",
     "esModuleInterop": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": [
+    "./**/*.ts",
     "package/**/*.ts",
     "package/**/*.tsx"
   ]

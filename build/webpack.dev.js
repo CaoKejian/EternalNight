@@ -4,6 +4,7 @@ const base = require('./webpack.base.js')
 const { webpackEntry } = require('./compile.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DotenvWebpackPlugin = require('dotenv-webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const entryPoints = Object.keys(webpackEntry)
 const plugins = [
@@ -15,6 +16,10 @@ const plugins = [
     })
   }),
   new DotenvWebpackPlugin(),
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css'
+})
 ]
 
 module.exports = merge(base, {
@@ -61,19 +66,24 @@ module.exports = merge(base, {
   module: {
     rules: [
       {
-        test: /\.less$/,
+        test: /\.(css|less)$/,
         use: [
-          'style-loader',
-          'css-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                  localIdentName: '[local]--[hash:base64:5]',
+                },
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  ['postcss-preset-env', {}]
-                ]
-              }
-            }
+                plugins: [['postcss-preset-env', {}]],
+              },
+            },
           },
           'less-loader',
         ],
