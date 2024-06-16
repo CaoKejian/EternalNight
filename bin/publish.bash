@@ -15,7 +15,7 @@ if [ "$choice" = "b" ]; then
 elif [ "$choice" = "m" ]; then
   echo -e "\033[1;33m更新中版本\033[0m"
   npm version minor
-elif [ "$choice" = "x" ]; then
+elif [ "$choice" = "s" ]; then
   echo -e "\033[1;33m更新小版本\033[0m"
   npm version patch
 else
