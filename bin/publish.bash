@@ -27,4 +27,4 @@ else
 fi
 
 updated_version=$(npm show @caokejian/nuwa-components version)
-echo "更新完成：@caokejian/nuwa-components:$updated_version"
+echo "更新完成：\033[1;33m@caokejian/nuwa-components:$updated_version\033[0m"
