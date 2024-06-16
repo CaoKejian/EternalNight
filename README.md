@@ -42,8 +42,10 @@ npm install -g pnpm
 
 # 开发指南
 
-## 创建组件
+## 创建组件  
 
+1. 使用 `npm i create-nuwa-template -g` 安装脚手架
+2. 在 `package` 目录里使用`colin-add`来创建组件。
 
 ## 更新组件、打包组件、发包
 
@@ -57,7 +59,9 @@ pnpm up:prod
 pnpm build:dev
 pnpm build:prod
 ```
-> 发包
+> 发包  
+
+先增加文件权限 `chmod +x bin/publish.bash`
 ```bash
 pnpm publish:dev
 pnpm publish:prod
