@@ -28,4 +28,4 @@ fi
 npm publish
 
 updated_version=$(npm show @caokejian/nuwa-components version)
-echo -e "\033[1;33m更新完成：@caokejian/nuwa-components:$updated_version\033[0m"
+echo -e "\033[1;33m更新完成：@caokejian/nuwa-components@$updated_version\033[0m"
