@@ -11,9 +11,6 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
   args: { xxx: '123'}, // 放props
 } satisfies Meta<typeof Demo>;
 

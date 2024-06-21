@@ -14,6 +14,32 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/react-webpack5',
     options: {}
-  }
+  },
+  webpackFinal: async (config: any) => {
+    config.module.rules.push({
+      test: /\.less$/,
+      use: [
+        { loader: "style-loader" },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              localIdentName: '[name]__[local]--[hash:base64:5]', 
+            },
+          },
+        },
+        {
+          loader: 'less-loader',
+          options: { lessOptions: { javascriptEnabled: true } },
+        },
+      ],
+    });
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+      },
+    };
+  },
 };
 export default config;
