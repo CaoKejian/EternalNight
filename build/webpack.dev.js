@@ -19,7 +19,7 @@ const plugins = [
   new MiniCssExtractPlugin({
     filename: '[name].css',
     chunkFilename: '[id].css'
-})
+  })
 ]
 
 module.exports = merge(base, {
