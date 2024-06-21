@@ -6,9 +6,10 @@ module.exports = {
     node: true, // 解决 'module' is not defined报错。
   },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended"
   ],
   overrides: [
     {
