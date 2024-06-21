@@ -42,10 +42,22 @@ npm install -g pnpm
 
 # 开发指南
 
+## 启动项目（两种方式）  
+
+1. 使用sb框架（开发、调试更佳·推荐）`pnpm storybook`  
+2. 使用webpack启动（单个组件）`pnpm dev`  
+注：如果使用 `webpack` 模式启动，需要自行在 `index.tsx` 里添加一些代码，如下：
+```js
+import { createRoot } from 'react-dom/client'
+if (process.env.APP_NAME !== 'XLP') {
+  createRoot(document.getElementById('app')!).render(<Demo label={''} />)
+}
+```
+
 ## 创建组件  
 
 1. 使用 `npm i create-nuwa-template -g` 安装脚手架
-2. 在 `package` 目录里使用`colin-add`来创建组件。
+2. 在 `package` 目录里使用`colin-add`来创建组件
 
 ## 更新组件、打包组件、发包
 
@@ -79,7 +91,10 @@ npm i -g verdaccio (node-v16)
 第二种方式：pm2 start verdaccio
 ```
 - 3. 使用
-  - 必要：添加用户 `npm adduser --registry http://localhost:4873/`
-  - 发包 `npm publish --registry http://localhost:4873/`
+```bash
+添加用户 `npm adduser --registry http://localhost:4873/`
 
-  - 或者可以直接设置源 `npm set registry http://localhost:4873/`, 然后就可以直接不带参数使用。
+发包 `npm publish --registry http://localhost:4873/`
+
+或者可以直接设置源 `npm set registry http://localhost:4873/`, 然后就可以直接不带参数使用。
+```

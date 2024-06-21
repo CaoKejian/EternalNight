@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Demo } from './Demo';
+import { Demo } from '.';
 
 const meta = {
   title: 'CaoKejian/Demo',
@@ -11,15 +11,12 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-  args: { xxx: '123'}, // 放props
+  args: {}, // 放props
 } satisfies Meta<typeof Demo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+  args: {label: '123'},
 };
