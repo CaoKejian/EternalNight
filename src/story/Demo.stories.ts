@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Demo } from '../../package/demo';
+import { Index } from '../../package/demo';
+import props from '../../package/demo/model/props';
 
 const meta = {
   title: 'CaoKejian/Demo',
-  component: Demo,
+  component: Index,
   parameters: {
     layout: 'centered',
     viewport: {
@@ -11,12 +12,12 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-  args: {}, // 放props
-} satisfies Meta<typeof Demo>;
+} satisfies Meta<typeof Index>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {label: '123'},
+export const Demo: Story = {
+  args: props,
 };

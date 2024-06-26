@@ -1,25 +1,25 @@
 import React from 'react';
 import * as s from './index.less'
+import xprops from './model/props'
 interface ButtonProps {
-  primary?: boolean;
-  size?: 'small' | 'medium' | 'large';
   label?: string;
   onClick?: () => void;
 }
 
-export const Demo = ({
-  primary = false,
-  size = 'medium',
-  label,
-  ...props
-}: ButtonProps) => {
+const mergeProps = (xprops: ButtonProps, props: ButtonProps) => ({
+  ...xprops,
+  ...props,
+})
+export const Index = (props: ButtonProps) => {
+
+  const mergedProps = mergeProps(xprops, props);
   return (
     <button
       type="button"
       className={s.button}
-      {...props}
+      {...mergedProps}
     >
-      {label || '默认文字'}
+      {mergedProps.label || '默认文字'}
     </button>
-  );
-};
+  )
+}
