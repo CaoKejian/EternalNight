@@ -8,10 +8,10 @@ const meta = {
   parameters: {
     layout: 'centered',
     viewport: {
-      defaultViewport: 'iphonex',
-    },
+      defaultViewport: 'iphonex'
+    }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs']
 } satisfies Meta<typeof Index>;
 
 export default meta;
@@ -19,5 +19,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Demo: Story = {
-  args: props,
+  args: props
 };
