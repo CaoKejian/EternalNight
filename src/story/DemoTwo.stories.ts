@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Demo } from '../../package/demo'
-import props from '../../package/demo/model/props'
+import { DemoTwo } from '../../package/demo-two'
+import props from '../../package/demo-two/model/props'
 
 const meta = {
-  title: 'CaoKejian/Demo',
-  component: Demo,
+  title: 'CaoKejian/DemoTwo',
+  component: DemoTwo,
   parameters: {
     layout: 'centered',
     viewport: {
@@ -12,12 +12,12 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Demo>
+} satisfies Meta<typeof DemoTwo>
 
 export default meta
 
 type Story = StoryObj<typeof meta>;
 
-export const DemoComponent: Story = {
+export const DemoTwoComponent: Story = {
   args: props,
 }

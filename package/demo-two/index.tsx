@@ -1,6 +1,7 @@
 import React from 'react'
 import * as s from './index.less'
 import xprops from './model/props'
+
 interface ButtonProps {
   label?: string;
   onClick?: () => void;
@@ -10,7 +11,7 @@ const mergeProps = (xprops: ButtonProps, props: ButtonProps) => ({
   ...xprops,
   ...props,
 })
-export const Demo = (props: ButtonProps) => {
+export const DemoTwo = (props: ButtonProps) => {
 
   const mergedProps = mergeProps(xprops, props)
   return (
