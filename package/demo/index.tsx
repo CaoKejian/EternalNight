@@ -2,6 +2,9 @@ import React from 'react'
 import * as s from './index.less'
 import xprops from './model/props'
 interface ButtonProps {
+  /**
+   * 按钮名称
+   */
   label: string
   style?: React.CSSProperties
   backgroundColor?: string

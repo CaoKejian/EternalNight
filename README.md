@@ -5,30 +5,56 @@
 ## 目录
 
 ```shell
-NuWa
-├─ .gitignore
-├─ .nvmrc
-├─ README.md
+Nuwa
+
+├─ .storybook
+│  ├─ main.ts
+│  └─ preview.ts
+├─ bin
+│  └─ publish.bash
 ├─ build
 │  ├─ compile.js
+│  ├─ upload.js
 │  ├─ webpack.base.js
 │  ├─ webpack.dev.js
 │  └─ webpack.prod.js
-├─ eslint.config.mjs
-├─ index.html
+├─ constant
+│  └─ utils.ts
 ├─ package
-│  ├─ new-demo
+│  ├─ demo
+│  │  ├─ index.html
 │  │  ├─ index.less
-│  │  └─ index.tsx
-│  └─ new-demo-two
-│     ├─ index.less
-│     └─ index.tsx
-├─ package.json
+│  │  ├─ index.tsx
+│  │  ├─ meta.json
+│  │  └─ model
+│  │     └─ props.ts
+│  ├─ demo-two
+│  │  └─ ...... 同上
+│  ├─ index.ts
+│  └─ utils
+│     └─ index.ts
 ├─ src
 │  ├─ App.tsx
-│  └─ index.tsx
+│  ├─ index.tsx
+│  ├─ story
+│  │  ├─ Demo.stories.ts
+│  │  └─ DemoTwo.stories.ts
+│  └─ types
+│     └─ css.d.ts
+├─ .env
+├─ .eslintignore
+├─ .eslintrc.js
+├─ .gitignore
+├─ .npmrc
+├─ .nvmrc
+├─ .prettierignore
+├─ .prettierrc.js
+├─ index.html
+├─ package.json
+├─ pnpm-lock.yaml
+├─ postcss.config.js
+├─ README.md
 └─ tsconfig.json
-
 ```
 
 
@@ -98,3 +124,4 @@ npm i -g verdaccio (node-v16)
 
 或者可以直接设置源 `npm set registry http://localhost:4873/`, 然后就可以直接不带参数使用。
 ```
+

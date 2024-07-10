@@ -9,14 +9,12 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    // 设置默认语言为中文
     locale: 'zh',
     locales: {
       en: 'English',
       zh: '中文',
     },
-    // 添加其他全局参数
-    layout: 'centered',  // 可选，根据你的需要添加
+    layout: 'centered',
     // 配置移动端区域
     viewport: {
       viewports: INITIAL_VIEWPORTS, // 使用默认的视口配置
