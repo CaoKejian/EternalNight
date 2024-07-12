@@ -10,7 +10,9 @@ const entryPoints = Object.keys(webpackEntry)
 const plugins = [
   ...entryPoints.map(entry => {
     return new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, `../package/${entry}/index.html`),
+      template: './index.html',
+      title: entry,
+      inject: true,
       filename: `${entry}/index.html`,
       chunks: [entry],
     })

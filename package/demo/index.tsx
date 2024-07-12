@@ -1,6 +1,8 @@
 import React from 'react'
 import * as s from './index.less'
 import xprops from './model/props'
+import { createRoot } from 'react-dom/client'
+
 interface ButtonProps {
   /**
    * 按钮名称
@@ -46,4 +48,17 @@ export const Demo = (props: ButtonProps) => {
       </div>
     </div>
   )
+}
+
+if (process.env.APP_NAME !== 'XLP') {
+  // 确保在DOM加载完成后再执行渲染操作
+  document.addEventListener('DOMContentLoaded', () => {
+    const rootElement = document.getElementById('app')
+    if (rootElement) {
+      const root = createRoot(rootElement)
+      root.render(<Demo label={'xxx'} />)
+    } else {
+      console.error('未能找到ID为app的元素')
+    }
+  })
 }
