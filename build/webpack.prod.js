@@ -6,7 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = merge(base, {
   stats: 'errors-warnings',
-  mode: 'production', // 生产模式
+  mode: 'production',
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
@@ -57,7 +57,7 @@ module.exports = merge(base, {
   optimization: {
     minimizer: [
       new CssMinimizerPlugin({
-        parallel: true  // 多进程并发执行，提升构建速度 。 运行时默认的并发数：os.cpus().length - 1
+        parallel: true  // 多进程并发执行，提升构建速度
       }),
     ],
   },
