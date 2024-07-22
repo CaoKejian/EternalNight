@@ -24,12 +24,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            cacheDirectory: true, // 开启cache
             presets: [
               [
                 '@babel/preset-env',
                 {
-                  targets: 'iOS 9, Android 4.4, last 2 versions, > 0.2%, not dead',
-                  useBuiltIns: 'usage',
+                  targets: 'iOS 9, Android 4.4, last 2 versions, > 0.2%, not dead', // 使用环境
+                  useBuiltIns: 'usage', // 是否使用polyfills来提供缺失的原生方法
                   corejs: 3,
                 },
               ],
