@@ -76,18 +76,18 @@ npm install -g pnpm
 ```js
 import { createRoot } from 'react-dom/client'
 if (process.env.APP_NAME !== 'XLP') {
-  createRoot(document.getElementById('app')!).render(<Demo label={''} />)
+  createRoot(document.getElementById('app')!).render(<YourCp />)
 }
 ```
 
 ## 创建组件  
 
 1. 使用 `npm i create-nuwa-template -g` 安装脚手架
-2. 在 `package` 目录里使用`colin-add`来创建组件
+2. 在 `package` 目录里使用 `colin-add` 来创建组件
 
 ## 更新组件、打包组件、发包
 
-> 更新（上传组件信息，不包含依赖）
+> 更新（上传组件信息）
 ```bash
 pnpm up:dev
 pnpm up:prod

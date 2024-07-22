@@ -1,4 +1,4 @@
 declare module '*.less' {
-  const styles: { [className: string]: string }
+  const styles: { [className: string]: string };
   export = styles;
 }

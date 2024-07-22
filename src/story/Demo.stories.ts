@@ -8,8 +8,8 @@ const meta = {
   parameters: {
     layout: 'centered',
     viewport: {
-      defaultViewport: 'iphonex',
-    },
+      defaultViewport: 'iphonex'
+    }
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Demo>
